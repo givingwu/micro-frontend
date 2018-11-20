@@ -24,7 +24,7 @@ class MicroFrontEnd implements MicroFE {
   }
 
   // singleton implementation in one instance
-  createHost() {
+  createHost(): any {
     if (!this._instance) {
       this._instance = new MicroFrontEnd();
       (<any>window).microFrontEnd = this._instance
@@ -50,16 +50,16 @@ class MicroFrontEnd implements MicroFE {
     return this.apps.length
   }
 
-  getActiveApp() {
+  getActiveApp(): PortalApp | undefined {
     return this._active
   }
 
-  setActiveApp(app: PortalApp) {
+  setActiveApp(app: PortalApp): void {
     this._active = app
     this.start()
   }
 
-  start() {
+  start(): void {
     if (!this.apps.length) {
       throw new Error('You must pass a micro-frontend portal to start the application.')
     } else {

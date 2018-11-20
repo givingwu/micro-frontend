@@ -2,6 +2,7 @@ import * as history from 'history'
 
 export interface MicroFE {
   // new (): MicroFE;
+  // _active: PortalApp;
   apps: Array<PortalApp>;
   history: history.History;
   // instance: undefined | MicroFE;

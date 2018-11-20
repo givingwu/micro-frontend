@@ -15,7 +15,7 @@ export default class App implements PortalApp {
     this.config = config;
   }
 
-  render() {
+  render(): any {
     if (this.config.render && typeof this.config.render === 'function') {
       return this.config.render()
     } else {
