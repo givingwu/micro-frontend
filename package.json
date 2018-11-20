@@ -1,0 +1,24 @@
+{
+  "name": "micro-frontend",
+  "version": "0.0.1",
+  "description": "A micro-frontend framework crated by vuchan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuchan/micro-frontend.git"
+  },
+  "keywords": [
+    "micro-fe",
+    "micro-frontend",
+    "micro-frontend-framework"
+  ],
+  "author": " <vuchan givingwu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vuchan/micro-frontend/issues"
+  },
+  "homepage": "https://github.com/vuchan/micro-frontend#readme"
+}
