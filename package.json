@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/vuchan/micro-frontend/issues"
   },
-  "homepage": "https://github.com/vuchan/micro-frontend#readme"
+  "homepage": "https://github.com/vuchan/micro-frontend#readme",
+  "devDependencies": {
+    "history": "^4.7.2"
+  },
+  "dependencies": {
+    "@types/history": "^4.7.2"
+  }
 }

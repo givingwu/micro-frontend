@@ -1,39 +1,46 @@
+import * as history from 'history'
 
 export interface MicroFE {
   // new (): MicroFE;
-  // private readonly apps: Array<PortalApp>;
+  apps: Array<PortalApp>;
+  history: history.History;
   // instance: undefined | MicroFE;
-  // active: null | PortalApp;
-  [propName: string]: any;
+  // protected activeIndex: number;
+  // protected active: PortalApp;
 
-  start(): void | Boolean;
+  start(): void;
   createHost(): MicroFE;
   // createApp(app: AppConfig | PortalApp): PortalApp | number;
   createApp(appName: string, app: PortalApp | AppConfig): number | PortalApp;
   getActiveApp(): PortalApp;
+  setActiveApp(app: PortalApp, activeIndex?: number): void;
 }
 
 export interface PortalApp {
   // new (appName: string, appConfig: AppConfig): PortalApp;
   config: AppConfig;
   appName: string;
+  render(): void;
+
   path?: string;
-  didMount?: () => void;
+  mount?: () => void;
   unmount?: () => void;
 }
 
 export interface AppConfig {
   config: AppConfig;
   appName: string;
-  path?: string;
-  component: VueComponent | ReactComponent | AngularComponent
-  mountNode: string | HTMLElement;
 
-  didMount?: () => void;
+  path?: string;
+  component?: string | Function | VueComponent | ReactComponent | AngularComponent
+  mountNode?: string | HTMLElement;
+
+  render(): void | HTMLElement;
+  mount?: () => void;
   unmount?: () => void;
 }
 
-interface VirtualNode {}
+interface VirtualNode { [propName: string]: any; }
 interface VueComponent extends VirtualNode {}
 interface ReactComponent extends VirtualNode {}
 interface AngularComponent extends VirtualNode {}
