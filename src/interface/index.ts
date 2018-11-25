@@ -3,7 +3,7 @@ import * as history from 'history'
 export interface MicroFE {
   // new (): MicroFE;
   // _active: PortalApp;
-  apps: Array<PortalApp>;
+  appMap: Map<String, PortalApp>;
   history: history.History;
   // instance: undefined | MicroFE;
   // protected activeIndex: number;
@@ -11,28 +11,27 @@ export interface MicroFE {
 
   start(): void;
   createHost(): MicroFE;
-  // createApp(app: AppConfig | PortalApp): PortalApp | number;
-  createApp(appName: string, app: PortalApp | AppConfig): number | PortalApp;
-  getActiveApp(): PortalApp;
-  setActiveApp(app: PortalApp, activeIndex?: number): void;
+  createApp(app: PortalApp | AppConfig): PortalApp | undefined;
+  // getActiveApp(): PortalApp;
+  // setActiveApp(app: PortalApp, activeIndex?: number): void;
+  // _renderMatchedApp(location: Location): void;
 }
 
 export interface PortalApp {
   // new (appName: string, appConfig: AppConfig): PortalApp;
   config: AppConfig;
-  appName: string;
   render(): void;
 
   path?: string;
+  lazy?: boolean;
   mount?: () => void;
   unmount?: () => void;
 }
 
 export interface AppConfig {
   config: AppConfig;
-  appName: string;
 
-  path?: string;
+  path?: string; // app name
   component?: string | Function | VueComponent | ReactComponent | AngularComponent
   mountNode?: string | HTMLElement;
 

@@ -3,15 +3,15 @@ import { PortalApp, AppConfig } from './interface'
 
 export default class App implements PortalApp {
   public config: AppConfig;
-  public appName: string;
+  public path: string;
   public component: AppConfig['component'];
   public mountNode: AppConfig['mountNode'];
 
   /**
    * create a new PortalApp instance
    */
-  constructor(appName: string, config: AppConfig) {
-    this.appName = appName;
+  constructor(config: AppConfig) {
+    this.path = config.path || '/';
     this.config = config;
   }
 
