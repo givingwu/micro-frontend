@@ -1,5 +1,5 @@
 # micro-frontend
-✨🌟✨ A micro-service resolution for frontend, it is very light and simple, use it only need learn a 3 APIs in 3 minutes.
+✨🌟✨ A micro-service resolution for frontend, it is very light and simple, use it only need learn 3 APIs in 3 minutes.
 
 
 ## Usage
