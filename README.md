@@ -80,7 +80,7 @@ The following questions i am not very clear yet or have no any good idea about t
 
 
 ## Trouble Shotting
-+ if u met one error like this `Error: No ESLint configuration found.` when u run this project, may this link [github issue](https://github.com/vuejs/vue-cli/issues/2539) can help you. i resolved it after has read this issue.
++ if u met one error like this `Error: No ESLint configuration found.` when u run this project, may this link [github issue](https://github.com/vuejs/vue-cli/issues/2539) can help you. i resolved it after have read this issue.
 
 ```js
 INFO  Starting development server... 94% after seal
