@@ -79,7 +79,7 @@ The following questions i am not very clear yet or have no any good idea about t
 + how to deploy? Only deploy host project or every project? Or a middle layer server?
 
 
-## Trouble Shotting
+## Troubleshooting
 + if u met one error like this `Error: No ESLint configuration found.` when u run this project, may this link [github issue](https://github.com/vuejs/vue-cli/issues/2539) can help you. i resolved it after have read this issue.
 
 ```js
