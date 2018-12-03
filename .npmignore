@@ -1,0 +1,10 @@
+node_modules/*
+demo/*
+src/*
+dist/*
+
+.DS_Store
+.vscode
+*.log
+yarn.*
+npm.*

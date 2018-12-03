@@ -1,14 +1,14 @@
 {
-  "name": "micro-frontend",
+  "name": "microfe",
   "version": "0.0.1",
   "description": "A micro-frontend framework crated by vuchan",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd ./host && yarn run serve"
   },
   "files": [
-    "./src"
+    "./lib"
   ],
   "repository": {
     "type": "git",
