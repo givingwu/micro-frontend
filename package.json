@@ -8,7 +8,7 @@
     "start": "cd ./host && yarn run serve"
   },
   "files": [
-    "./lib"
+    "./lib/*"
   ],
   "repository": {
     "type": "git",

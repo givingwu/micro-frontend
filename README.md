@@ -14,7 +14,7 @@
 // ...
 import app1 from '../../frontend-1/src/main'
 import app2 from '../../frontend-2/src/main'
-import microfe from '../../../lib'
+import microfe from 'micro-frontend'
 
 const host = microfe.createHost() // 1
 

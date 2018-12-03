@@ -1,5 +1,5 @@
 node_modules/*
-# demo/*
+demo/*
 src/*
 dist/*
 # /lib/*
