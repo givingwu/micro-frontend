@@ -1,20 +1,24 @@
 # micro-frontend
-✨🌟✨ A micro-service solution for frontend, use it only need to learn 3 APIs in 3 minutes.
+✨🌟✨ A micro-portal solution for frontend, use it only need to learn 3 APIs in 3 minutes.
+
++ Use multiple frameworks on the same page without refreshing the page (React, Vue)
++ Write code using a new framework, without rewriting your existing app
++ Lazy load code for improved initial load time with Webpack Code-Splitting.
 
 
 ## Usage
-+ step one: Create a host object.
++ step one: Create an host object.
 
-*[forntend-host project](./demo/frontend-host/src/main.js)*
+*[frontend-host project](./demo/frontend-host/src/main.js)*
 ```js
 // ...
 import app1 from '../../frontend-1/src/main'
 import app2 from '../../frontend-2/src/main'
 import microfe from '../../../lib'
 
-const host = microfe.createHost()
+const host = microfe.createHost() // 1
 
-host.createApp({
+host.createApp({ // 2
   path: '/',
   render() {/*  */}
   // if Vue: new Vue({ render: h => h(App) }).$mount('#app')
@@ -24,7 +28,7 @@ host.createApp({
 host.createApp(app1)
 host.createApp(app2)
 
-host.start()
+host.start() // 3
 ```
 
 + step two: Register each child app to the host object:
@@ -32,7 +36,7 @@ host.start()
 *[forntend-1 project](./demo/frontend-1/src/main.js)*
 ```js
 // ...
-const host = microfe.createHost() // it is a singleton object, so don't worry how many times it be called.
+const host = microfe.createHost()
 const app = {
   path: '/demo1',
   render() {/* your render code*/}
@@ -67,20 +71,20 @@ more and more ...
 
 
 ## TODOs
-+ [ ] Supports any frontend framework, Angular ???
++ [ ] Supports any frontend framework, Angular ??
 + [ ] lazy load each child app's entry component
-+ [ ] build each child app separately
++ [ ] build each child app independent and separately
 
 
 ## Questions
-The following questions i am not very clear yet or have no any good idea about them.
+The following questions i am not very clear yet or no any good idea about them.
 
 + how to manage common dependencies of each child app?
-+ how to deploy? Only deploy host project or every project? Or a middle layer server?
++ how to deploy them? Only deploy host project or every portal project? Or a middle layer server?
 
 
 ## Troubleshooting
-+ if u met one error like this `Error: No ESLint configuration found.` when u run this project, may this link [github issue](https://github.com/vuejs/vue-cli/issues/2539) can help you. i resolved it after have read this issue.
++ if u met one error like this `Error: No ESLint configuration found.` when u run this project, may this link [github issue](https://github.com/vuejs/vue-cli/issues/2539) can help you.
 
 ```js
 INFO  Starting development server... 94% after seal

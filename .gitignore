@@ -2,7 +2,7 @@ node_modules/*
 # demo/*
 src/*
 dist/*
-/lib/*
+# /lib/*
 
 .DS_Store
 .vscode

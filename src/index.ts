@@ -6,6 +6,7 @@ import * as history from 'history'
 class MicroFrontEnd implements MicroFE {
   private static active: PortalApp;
   private _instance: null | MicroFE;
+  private unlisten?: Function;
 
   public appMap: Map<String, PortalApp>;
   public history: history.History;
@@ -71,8 +72,12 @@ class MicroFrontEnd implements MicroFE {
       throw new Error('You must pass a micro-frontend portal to start up.')
     }
 
+    if (typeof this.unlisten === 'function') {
+      this.unlisten()
+    }
+
     /* this.unlisten =  */
-    this.history.listen((location) => {
+    this.unlisten = this.history.listen((location) => {
       // location: Location<HistoryLocationState>
       this._getMatchedApp(location)
     })
