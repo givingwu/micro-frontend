@@ -1,22 +1,22 @@
-[中文](./README-zh_CN.md) | English
+中文 | [English](./README.md)
 
-# micro-frontend
-✨🌟✨ A single-SPA solution for frontend, use it only need to learn 3 APIs in 3 minutes.
+# 微前端
+✨🌟✨ 单页面微前端应用解决方法, 使用非常简单只需要三分钟学会三个API既可。
 
-+ Use multiple projects on the same page without refreshing the page.
-+ Write code using a new project, without rewriting your existing app.
-+ Lazy load code for improved initial load time with Webpack Code-Splitting.
++ 同一页面多个项目之间跳转无需刷新界面
++ 整合新项目到旧项目中无需修改之前代码
++ 懒加载项目依赖代码 [Webpack Code-Splitting](https://webpack.js.org/guides/code-splitting/)
 
 
 ## Usage
-+ step one: Create an host object.
++ 第一步：创建 host 对象
 
-*[frontend-host project](./demo/frontend-host/src/main.js)*
+*[frontend-host demo](./demo/frontend-host/src/main.js)*
 ```js
 // ...
 import app1 from '../../frontend-1/src/main'
 import app2 from '../../frontend-2/src/main'
-import microfe from 'm-fe'
+import microfe from 'micro-frontend'
 
 const host = microfe.createHost() // 1
 
@@ -33,9 +33,9 @@ host.createApp(app2)
 host.start() // 3
 ```
 
-+ step two: Register each child app to the host object:
++ 第二步：在每个子项目中创建 host 并注册 app
 
-*[forntend-1 project](./demo/frontend-1/src/main.js)*
+*[forntend-1 demo](./demo/frontend-1/src/main.js)*
 ```js
 // ...
 const host = microfe.createHost()
@@ -51,7 +51,7 @@ host.createApp(app) // The same app reference or app.path will be called only on
 export default app;
 ```
 
-*[forntend-2 project](./demo/frontend-1/src/main.js)*
+*[forntend-2 demo](./demo/frontend-1/src/main.js)*
 ```js
 // ...
 const host = microfe.createHost() // it is a singleton object, so don't worry how many times it be called.
