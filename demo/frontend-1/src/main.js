@@ -7,6 +7,7 @@ Vue.config.productionTip = false
 const host = microfe.createHost()
 const app = {
   path: '/demo1',
+  dev: process.env.NODE_ENV === 'development',
   render() {
     return new Vue({
       render: h => h(App),
@@ -14,11 +15,7 @@ const app = {
   }
 }
 
-// eslint-disable-next-line
-console.log('process.env.HOST_APP: ', process.env.HOST_APP);
-
 host.createApp(app)
-
-// host.start()
+host.start()
 
 export default app;

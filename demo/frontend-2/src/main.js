@@ -15,13 +15,7 @@ const app = {
   }
 };
 
-// eslint-disable-next-line
-console.log('process.env.HOST_APP: ', process.env.HOST_APP);
-
 host.createApp(app);
-
-if (process.env.NODE_ENV === 'development' && process.env.HOST_APP) {
-  host.start()
-}
+// host.start()
 
 export default app;

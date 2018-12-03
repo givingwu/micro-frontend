@@ -6,6 +6,7 @@
     "outDir": "./lib",
     "rootDir": "./src",
     "strict": true,
+    // "removeComments": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,

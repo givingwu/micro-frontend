@@ -1,7 +1,7 @@
 # micro-frontend
 ✨🌟✨ A micro-portal solution for frontend, use it only need to learn 3 APIs in 3 minutes.
 
-+ Use multiple project on the same page without refreshing the page.
++ Use multiple projects on the same page without refreshing the page.
 + Write code using a new framework, without rewriting your existing app.
 + Lazy load code for improved initial load time with Webpack Code-Splitting.
 

@@ -41,7 +41,7 @@ class MicroFrontEnd implements MicroFE {
     appPath = appPath.slice(0, 1) === '/' ? appPath : '/' + appPath
 
     //eslint-disable-next-line
-    console.log(app)
+    // console.log(app)
 
     if (appPath && typeof appPath === 'string') {
       if (!this.appMap.has(appPath)) {
@@ -83,15 +83,21 @@ class MicroFrontEnd implements MicroFE {
     })
 
     if (!this.active) {
+      // default startUp app is which path '/'
       const startUpApp = this.appMap.get('/')
 
       if (startUpApp) {
         this.active = startUpApp
       } else {
-        // eslint-disable-next-line
-        console.warn('No any start up app which has path `/` in micro-fe')
+        // if no any app has path '/', try to use the first otherwise throw the warning
+        if (this.appMap.size >= 1) {
+          const firstPath = [...this.appMap.keys()][0]
+          this.active = this.appMap.get(firstPath) as App
+        } else {
+          // eslint-disable-next-line
+          console.warn('No any start up app which has path `/` in micro-fe')
+        }
       }
-
     }
   }
 
