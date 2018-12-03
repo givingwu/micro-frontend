@@ -4,25 +4,36 @@
     <p>HOST should be very clear, i think.</p>
     <ul>
       <li>
-        <a v-href="'/demo1'">to demo1</a>
+        <a v-href="app1.path">to demo1 project</a>
       </li>
       <li>
-        <a v-href="'/demo2'">to demo2</a>
+        <a v-href="app2.path">to demo2 project</a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import host from "../main"
+import host from '../main'
+import app1 from '../../../frontend-1/src/main'
+import app2 from '../../../frontend-2/src/main'
+
+// eslint-disable-next-line
+console.log('host project:', host)
 
 export default {
   name: 'HelloWorld',
+  data() {
+    return {
+      app1,
+      app2,
+    }
+  },
   directives: {
     "href" (el, binding) {
-      el.addEventListener('click', function handleHrefClicke(evt) {
+      el.addEventListener('click', function handleHrefClick(evt) {
         // eslint-disable-next-line
-        console.log(el, evt, binding)
+        console.log(evt, binding)
         host.history.push(binding.value)
       })
     }
