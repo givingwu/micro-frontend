@@ -1,9 +1,10 @@
 {
-  "name": "micro-frontend",
-  "version": "0.0.3",
+  "name": "microfe",
+  "version": "0.0.0",
   "description": "A micro-frontend framework crated by vuchan",
   "main": "lib/index.js",
   "scripts": {
+    "publish": "npm version patch && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd ./host && yarn run serve"
   },
