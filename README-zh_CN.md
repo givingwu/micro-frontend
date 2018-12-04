@@ -8,12 +8,41 @@
 + 懒加载项目依赖代码 [Webpack Code-Splitting](https://webpack.js.org/guides/code-splitting/)
 
 
-## Usage
+## 如何做到？
++ 独立运行
+```js
+const app = host.createApp(appConfig)
+// 独立运行
+app.start()
+```
+
++ 独立部署
+```bash
+cd path/app1
+npm run build
+sh deploy.sh
+```
+
++ 组合运行
+```js
+const app1 = host.createApp(appConfig1)
+const app2 = host.createApp(appConfig2)
+
+host.start()
+```
+
++ 组合部署
+```bash
+cd path/hostProject
+npm run build
+sh deploy.sh
+```
+
+## 用例
 + 第一步：创建 host 对象
 
 *[frontend-host demo](./demo/frontend-host/src/main.js)*
 ```js
-// ...
 import app1 from '../../frontend-1/src/main'
 import app2 from '../../frontend-2/src/main'
 import microfe from 'micro-frontend'
@@ -44,7 +73,7 @@ const app = {
   render() {/* your render code*/}
 }
 
-host.createApp(app) // The same app reference or app.path will be called only once too.
+host.createApp(app) // 相同的 APP 对象或者 path 只会被创建一次
 
 /* if u wanna run this child project single, open following code */
 // host.start()
@@ -63,30 +92,28 @@ const app = {
 host.createApp(app) // The same app reference or app.path will be called only once too.
 
 /* if u wanna run this child project single, open following code */
-// host.start()
+app.start()
 export default app;
 ```
 
-more and more ...
-
-+ step three: Run the host project which one u called `host.start()` method.
++ 第三步: 进入你调用`host.start()`方法的主项目启动它。
 
 
 ## TODOs
-+ [ ] Supports any frontend framework, Angular ??
-+ [ ] lazy load each child app's entry component
-+ [ ] build each child app independent and separately
++ [ ] 支持所有前端框架
++ [ ] 独立构建每个子应用
++ [ ] 懒加载子应用的入口组件
 
 
 ## Questions
-The following questions i am not very clear yet or no any good idea about them.
+下面的问题还没有好的主意：
 
-+ how to manage common dependencies of each child app?
-+ how to deploy them? Only deploy host project or every portal project? Or a middle layer server?
++ 如何管理不同应用之间到公共依赖？
++ 如何部署它们？只需要部署 host project，还是部署每一个 portal 子项目？或者一个中间层服务器？
 
 
 ## Troubleshooting
-+ if u met one error like this `Error: No ESLint configuration found.` when u run this project, may this link [github issue](https://github.com/vuejs/vue-cli/issues/2539) can help you.
++ 如果你遇到了这样到问题： `Error: No ESLint configuration found.` 这个连接[github issue](https://github.com/vuejs/vue-cli/issues/2539)可以帮到你.
 
 ```js
 INFO  Starting development server... 94% after seal
@@ -96,3 +123,6 @@ ERROR  Failed to compile with 1 errors
 Module build failed (from ./node_modules/_eslint-loader@2.1.1@eslint-loader/index.js):
   Error: No ESLint configuration found.    at Config.getLocalConfigHierarchy
 ```
+
+## References
+[微前端的那些事儿](https://github.com/phodal/microfrontends)
