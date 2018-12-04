@@ -9,6 +9,7 @@ export interface MicroFE {
 export interface PortalApp {
     config: AppConfig;
     render(): void;
+    start(): void;
     path?: string;
     lazy?: boolean;
     mount?: () => void;

@@ -21,6 +21,7 @@ export interface PortalApp {
   // new (appName: string, appConfig: AppConfig): PortalApp;
   config: AppConfig;
   render(): void;
+  start(): void;
 
   path?: string;
   lazy?: boolean;
