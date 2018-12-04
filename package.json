@@ -4,7 +4,7 @@
   "description": "A micro-frontend framework crated by vuchan",
   "main": "lib/index.js",
   "scripts": {
-    "publish": "npm version patch && npm publish",
+    "publish": "npm version patch && npm publish && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd ./host && yarn run serve"
   },
