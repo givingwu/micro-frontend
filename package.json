@@ -1,6 +1,6 @@
 {
   "name": "micro-frontend",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A micro-frontend framework crated by vuchan",
   "main": "lib/index.js",
   "scripts": {
