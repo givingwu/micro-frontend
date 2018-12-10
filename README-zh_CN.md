@@ -20,7 +20,7 @@ app.start()
 ```bash
 cd path/app1
 npm run build
-sh deploy.sh
+sh deploy.sh # if u have this shell script
 ```
 
 + 组合运行

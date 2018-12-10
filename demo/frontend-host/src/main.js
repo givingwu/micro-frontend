@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import microfe from 'm-fe'
+import microfe from 'micro-frontend'
 
 Vue.config.productionTip = false
 

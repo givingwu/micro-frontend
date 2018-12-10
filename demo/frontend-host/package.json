@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "micro-frontend": "^0.0.2",
+    "micro-frontend": "^0.0.3",
     "vue": "^2.5.17"
   },
   "devDependencies": {

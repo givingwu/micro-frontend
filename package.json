@@ -6,10 +6,10 @@
   "scripts": {
     "publish": "npm version patch && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd ./host && yarn run serve"
+    "start": "cd ./demo/frontend-host && yarn run serve"
   },
   "files": [
-    "./lib/*"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "micro-frontend",
     "micro-frontend-framework"
   ],
-  "author": " <vuchan givingwu@gmail.com>",
+  "author": "vuchan <givingwu@gmail.com> (https://github.com/vuchan)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vuchan/micro-frontend/issues"
@@ -30,6 +30,7 @@
     "@types/history": "^4.7.2"
   },
   "dependencies": {
-    "history": "^4.7.2"
+    "history": "^4.7.2",
+    "micro-frontend": "^0.0.5"
   }
 }
