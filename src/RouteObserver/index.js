@@ -18,11 +18,13 @@ const CreateRoute = ({
 
 export class PageManger {
   constructor (mode = 'history') {
+    this.mode = mode
+
     /*
      * Vue => VueRouter
      * React => ReactRouter
      */
-    this.routeMap = {
+    this.routesMap = {
       '/': {
         path: '/',
         name: 'root',
@@ -87,14 +89,16 @@ export class PageManger {
   }
 
   register (portal) {
-    this.routeMap[portal.pathname] = CreateRoute(portal)
+    this.routesMap[portal.pathname] = CreateRoute(portal)
   }
 
   getMatchedPortal (pathname) {
-    return this.routeMap[pathname]
+    return this.routesMap[pathname]
   }
 
   unlisten () {
     return this._unlisten()
   }
 }
+
+export default new PageManger()

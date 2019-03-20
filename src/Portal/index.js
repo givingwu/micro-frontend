@@ -1,5 +1,5 @@
-import pageManger from './PageManger'
-import LazyLoader from './LazyLoader'
+import pageManger from '../PageManger'
+import LazyLoader from '../LazyLoader'
 import { DEFAULT_GET_RESOURCE_API } from '../config'
 
 export default class Portal {

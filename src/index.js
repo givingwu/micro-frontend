@@ -1,4 +1,6 @@
-import PageManger from './PageManger'
+import { pageManger } from './PageManger'
+import Loading from './Loading'
+import PageRouter from './PageRouter'
 
 if (!window.microFrontEnd) {
   /* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
@@ -20,10 +22,18 @@ if (!window.microFrontEnd) {
 const microFrontEnd = window.microFrontEnd
 
 if (!microFrontEnd.pageManger) {
-  microFrontEnd.pageManger = new PageManger()
+  microFrontEnd.pageManger = pageManger
 }
 
 // if freeze is available, prevents adding or
 // removing the object prototype properties
 // (value, get, set, enumerable, writable, configurable)
-export default Object.freeze(microFrontEnd)
+if (Object.freeze) {
+  Object.freeze(microFrontEnd)
+}
+
+export default microFrontEnd
+export {
+  PageRouter,
+  Loading,
+}

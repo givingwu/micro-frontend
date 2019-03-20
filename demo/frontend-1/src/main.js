@@ -16,6 +16,5 @@ const app = {
 }
 
 host.createApp(app)
-host.start()
 
 export default app;
