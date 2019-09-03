@@ -72,7 +72,7 @@ more and more ...
 + step three: Run the host project which one u called `host.start()` method.
 
 
-## TODOs
+## TODO
 + [ ] Supports any frontend framework, Angular ??
 + [ ] lazy load each child app's entry component
 + [ ] build each child app independent and separately
