@@ -113,7 +113,7 @@ export default app;
 
 
 ## Troubleshooting
-+ 如果你遇到了这样到问题： `Error: No ESLint configuration found.` 这个连接[github issue](https://github.com/vuejs/vue-cli/issues/2539)可以帮到你.
++ 如果你遇到了这样到问题： `Error: No ESLint configuration found.` 这个链接[github issue](https://github.com/vuejs/vue-cli/issues/2539)可以帮到你.
 
 ```js
 INFO  Starting development server... 94% after seal
